@@ -2,8 +2,9 @@
 
 Usage:  uv run evaluate.py                 (uses runs/esc50/best_model.keras, test fold 5)
         uv run evaluate.py --subset esc10
-Writes runs/<subset>/eval/: metrics.json, classification_report.txt,
-        confusion_matrix.png, per_class_accuracy.png, training_curves.png, top_confusions.csv
+Writes results/<subset>/: metrics.json, classification_report.txt, confusion_matrix.png,
+        per_class_accuracy.png, training_curves.png, top_confusions.csv
+(the reference outputs of the original run are kept in runs/<subset>/eval/)
 """
 import argparse
 import json
@@ -34,7 +35,7 @@ def main(argv=None):
         import extract_features
         extract_features.main()
     run = C.RUNS_DIR / (a.run or a.subset)
-    out = run / "eval"
+    out = C.ROOT / "results" / (a.run or a.subset)
     out.mkdir(parents=True, exist_ok=True)
 
     data = load_features(subset=a.subset)

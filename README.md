@@ -57,7 +57,7 @@ OK 5-221528-A-39.wav         glass_breaking    glass_breaking (0.88)            
 | `uv run predict.py --demo 8` | Top-3 predictions for 8 random test-fold clips |
 | `uv run train.py --out my_run` | Retrain from scratch into `runs/my_run/` (about 55 min on a laptop CPU; downloads the data if needed). Without `--out` it overwrites the provided model in `runs/esc50/` |
 | `uv run train.py --subset esc10` | Train on the 10-class ESC-10 subset (about 12 min) |
-| `uv run evaluate.py` | Metrics, confusion matrix and per-class accuracy plots in `runs/esc50/eval/` |
+| `uv run evaluate.py` | Metrics, confusion matrix and per-class accuracy plots in `results/esc50/` (reference copies from the original run: `runs/esc50/eval/`) |
 | `uv run --group notebook jupyter notebook notebooks/ESC50_CNN_Analysis.ipynb` | Open the analysis notebook (run `uv run demo.py --full` once first, it needs the dataset) |
 
 <details><summary>Without uv</summary>
