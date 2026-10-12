@@ -1,0 +1,8 @@
+# dataset and cached features are downloaded / regenerated locally
+data/
+features/*.npz
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+.venv/
+demo_output.png

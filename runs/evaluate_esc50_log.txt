@@ -1,0 +1,17 @@
+Model      : runs/esc50/best_model.keras
+Test fold  : 5  (400 clips, 50 classes)
+Accuracy   : 67.00 %
+Top-3 acc. : 85.00 %
+Macro F1   : 0.6456
+
+Hardest classes : helicopter (0%), airplane (0%), hen (12%), water_drops (12%), clapping (12%)
+Easiest classes : hand_saw (100%), clock_alarm (100%), glass_breaking (100%), rain (100%), cow (100%)
+Most frequent confusions (true -> predicted):
+           airplane -> helicopter       x4
+                hen -> laughing         x3
+         helicopter -> washing_machine  x3
+          breathing -> snoring          x3
+               wind -> car_horn         x2
+        water_drops -> clock_tick       x2
+
+Saved report and plots -> runs/esc50/eval/

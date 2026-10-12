@@ -1,0 +1,17 @@
+Model      : runs/esc10/best_model.keras
+Test fold  : 5  (80 clips, 10 classes)
+Accuracy   : 90.00 %
+Top-3 acc. : 97.50 %
+Macro F1   : 0.8981
+
+Hardest classes : crackling_fire (62%), sneezing (75%), sea_waves (88%), helicopter (88%), chainsaw (88%)
+Easiest classes : crying_baby (100%), clock_tick (100%), dog (100%), rain (100%), rooster (100%)
+Most frequent confusions (true -> predicted):
+           sneezing -> dog              x2
+          sea_waves -> rain             x1
+         helicopter -> crackling_fire   x1
+     crackling_fire -> rain             x1
+     crackling_fire -> helicopter       x1
+     crackling_fire -> clock_tick       x1
+
+Saved report and plots -> runs/esc10/eval/

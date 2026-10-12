@@ -1,0 +1,8 @@
+OK 5-223099-B-32.wav      true: keyboard_typing  predicted: keyboard_typing 0.27 | mouse_click 0.13 | can_opening 0.12
+XX 5-179868-A-43.wav      true: car_horn         predicted: cow 0.42 | cat 0.32 | sheep 0.08
+OK 5-197446-A-7.wav       true: insects          predicted: insects 0.58 | crackling_fire 0.07 | footsteps 0.06
+OK 5-198411-E-20.wav      true: crying_baby      predicted: crying_baby 0.91 | siren 0.02 | hen 0.01
+XX 5-260164-A-23.wav      true: breathing        predicted: snoring 0.52 | breathing 0.36 | crow 0.04
+OK 5-156999-D-19.wav      true: thunderstorm     predicted: thunderstorm 0.78 | wind 0.07 | fireworks 0.04
+OK 5-234855-A-25.wav      true: footsteps        predicted: footsteps 0.36 | crackling_fire 0.10 | drinking_sipping 0.06
+OK 5-194930-B-1.wav       true: rooster          predicted: rooster 0.75 | siren 0.12 | cat 0.03

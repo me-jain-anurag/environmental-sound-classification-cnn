@@ -1,0 +1,11 @@
+count,true_class,predicted_as
+4,airplane,helicopter
+3,hen,laughing
+3,helicopter,washing_machine
+3,breathing,snoring
+2,wind,car_horn
+2,water_drops,clock_tick
+2,washing_machine,helicopter
+2,vacuum_cleaner,clock_alarm
+2,siren,cow
+2,pig,rooster

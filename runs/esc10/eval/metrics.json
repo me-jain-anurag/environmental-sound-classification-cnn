@@ -1,0 +1,6 @@
+{
+  "accuracy": 0.9,
+  "top3_accuracy": 0.975,
+  "macro_f1": 0.8981,
+  "test_clips": 80
+}

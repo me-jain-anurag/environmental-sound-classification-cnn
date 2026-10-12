@@ -1,0 +1,14 @@
+{
+  "subset": "esc50",
+  "classes": 50,
+  "train_clips": 1200,
+  "val_clips": 400,
+  "test_clips": 400,
+  "epochs_run": 91,
+  "best_epoch": 71,
+  "val_accuracy": 0.79,
+  "test_accuracy": 0.67,
+  "test_loss": 1.6699,
+  "params": 1058770,
+  "train_minutes": 53.8
+}

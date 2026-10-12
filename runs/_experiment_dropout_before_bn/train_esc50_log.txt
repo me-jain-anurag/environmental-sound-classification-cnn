@@ -1,0 +1,99 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791540536.221779     530 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791540536.222121     530 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791540537.906427     530 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1791540537.906968     530 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+Subset: ESC50  |  classes: 50  |  input shape: (128, 216, 1)
+Train folds [1, 2, 3]: 1200 clips  |  Val fold 4: 400  |  Test fold 5: 400
+E0000 00:00:1791540541.210451     530 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+Model: "ESC_CNN"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                             ┃ Output Shape                  ┃           Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━┩
+│ log_mel (InputLayer)                     │ (None, 128, 216, 1)           │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block1_conv (Conv2D)                     │ (None, 128, 216, 32)          │               288 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block1_bn (BatchNormalization)           │ (None, 128, 216, 32)          │               128 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block1_relu (ReLU)                       │ (None, 128, 216, 32)          │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block1_pool (MaxPooling2D)               │ (None, 64, 108, 32)           │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block1_drop (Dropout)                    │ (None, 64, 108, 32)           │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block2_conv (Conv2D)                     │ (None, 64, 108, 64)           │            18,432 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block2_bn (BatchNormalization)           │ (None, 64, 108, 64)           │               256 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block2_relu (ReLU)                       │ (None, 64, 108, 64)           │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block2_pool (MaxPooling2D)               │ (None, 32, 54, 64)            │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block2_drop (Dropout)                    │ (None, 32, 54, 64)            │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block3_conv (Conv2D)                     │ (None, 32, 54, 128)           │            73,728 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block3_bn (BatchNormalization)           │ (None, 32, 54, 128)           │               512 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block3_relu (ReLU)                       │ (None, 32, 54, 128)           │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block3_pool (MaxPooling2D)               │ (None, 16, 27, 128)           │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block3_drop (Dropout)                    │ (None, 16, 27, 128)           │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block4_conv (Conv2D)                     │ (None, 16, 27, 256)           │           294,912 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block4_bn (BatchNormalization)           │ (None, 16, 27, 256)           │             1,024 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block4_relu (ReLU)                       │ (None, 16, 27, 256)           │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block4_pool (MaxPooling2D)               │ (None, 8, 13, 256)            │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block4_drop (Dropout)                    │ (None, 8, 13, 256)            │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block5_conv (Conv2D)                     │ (None, 8, 13, 256)            │           589,824 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block5_bn (BatchNormalization)           │ (None, 8, 13, 256)            │             1,024 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ block5_relu (ReLU)                       │ (None, 8, 13, 256)            │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ gap (GlobalAveragePooling2D)             │ (None, 256)                   │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ head_drop1 (Dropout)                     │ (None, 256)                   │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ fc1 (Dense)                              │ (None, 256)                   │            65,792 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ head_drop2 (Dropout)                     │ (None, 256)                   │                 0 │
+├──────────────────────────────────────────┼───────────────────────────────┼───────────────────┤
+│ class_probs (Dense)                      │ (None, 50)                    │            12,850 │
+└──────────────────────────────────────────┴───────────────────────────────┴───────────────────┘
+ Total params: 1,058,770 (4.04 MB)
+ Trainable params: 1,057,298 (4.03 MB)
+ Non-trainable params: 1,472 (5.75 KB)
+Epoch 1/100
+37/37 - 38s - 1s/step - accuracy: 0.0481 - loss: 3.8664 - val_accuracy: 0.0450 - val_loss: 3.8744 - learning_rate: 0.0010
+Epoch 2/100
+37/37 - 35s - 935ms/step - accuracy: 0.0845 - loss: 3.6204 - val_accuracy: 0.0475 - val_loss: 3.9248 - learning_rate: 0.0010
+Epoch 3/100
+37/37 - 44s - 1s/step - accuracy: 0.1056 - loss: 3.4891 - val_accuracy: 0.0275 - val_loss: 4.1819 - learning_rate: 0.0010
+Epoch 4/100
+37/37 - 73s - 2s/step - accuracy: 0.1132 - loss: 3.4293 - val_accuracy: 0.0200 - val_loss: 4.1972 - learning_rate: 0.0010
+Epoch 5/100
+37/37 - 37s - 989ms/step - accuracy: 0.1512 - loss: 3.3002 - val_accuracy: 0.0400 - val_loss: 4.1044 - learning_rate: 0.0010
+Epoch 6/100
+37/37 - 44s - 1s/step - accuracy: 0.1926 - loss: 3.2276 - val_accuracy: 0.0275 - val_loss: 4.2422 - learning_rate: 0.0010
+Epoch 7/100
+
+Epoch 7: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+37/37 - 38s - 1s/step - accuracy: 0.1985 - loss: 3.1803 - val_accuracy: 0.0650 - val_loss: 3.9325 - learning_rate: 0.0010
+Epoch 8/100
+37/37 - 34s - 917ms/step - accuracy: 0.2424 - loss: 3.0730 - val_accuracy: 0.0525 - val_loss: 3.9045 - learning_rate: 5.0000e-04
+Epoch 9/100
+37/37 - 40s - 1s/step - accuracy: 0.2711 - loss: 3.0002 - val_accuracy: 0.0625 - val_loss: 3.7678 - learning_rate: 5.0000e-04
+Epoch 10/100
+37/37 - 32s - 864ms/step - accuracy: 0.2863 - loss: 2.9578 - val_accuracy: 0.0700 - val_loss: 3.6787 - learning_rate: 5.0000e-04
+Epoch 11/100
+37/37 - 55s - 1s/step - accuracy: 0.2812 - loss: 2.9543 - val_accuracy: 0.1000 - val_loss: 3.4858 - learning_rate: 5.0000e-04
+Epoch 12/100

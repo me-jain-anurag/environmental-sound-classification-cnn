@@ -1,0 +1,5 @@
+ESC-50 metadata: 2000 clips, 50 classes, 5 folds
+Front-end: sr=22050 Hz, n_fft=2048, hop=512, n_mels=128
+Extracted log-mel spectrograms: (2000, 128, 216)  in 10.4 s
+dB range: min=-80.0  max=0.0  mean=-48.9
+Saved -> features/esc50_logmel.npz
